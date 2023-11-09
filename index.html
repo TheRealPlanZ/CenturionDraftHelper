@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Sales Team Draft</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  #team-average { margin-top: 20px; }
+</style>
+</head>
+<body>
+  <div class="logo-container">
+    <img src="Centurions_Full Name_blue_PNG 5MG.png" alt="Centurions Logo" />
+  </div>
+  
+<h1>Sales Team Draft</h1>
+
+<select id="member-select">
+  <!-- Options will be dynamically filled with JavaScript -->
+</select>
+
+<button onclick="addSelectedMember()">Add Member</button>
+
+<table id="team-list">
+  <tr>
+    <th title="Member's name">Member</th>
+    <th title="Average percentage increase in sales over the last 3 years">Average Increase (%)</th>
+    <th title="Average sales amount over the last 3 years">Average Sales ($)</th>
+  </tr>
+  <!-- Selected team members will be listed here -->
+</table>
+
+<div id="team-average">
+  <strong>Team Member Count:</strong> <span id="member-count-display">0</span><br>
+  <strong>Team Average Sales Increase:</strong> <span id="average-increase-display">0%</span><br>
+  <strong>Team Total Average Sales:</strong> <span id="total-sales-display">$0</span>
+</div>
+
+<button onclick="exportTeamMembers()">Export Team</button>
+
+
+<script src="membersArray.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

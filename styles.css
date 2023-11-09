@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+select, button {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #555;
+  color: white;
+  border: 1px solid #444;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #666;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 2px solid #555; /* Add border to the table */
+}
+
+th, td {
+  border-bottom: 1px solid #555; /* Add horizontal border between rows */
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #555;
+  border-right: 1px solid #444; /* Add vertical border between headers */
+}
+
+td {
+  background-color: #444;
+  border-right: 1px solid #555; /* Add vertical border between cells */
+}
+
+th:last-child, td:last-child {
+  border-right: none; /* Remove the right border for the last cell */
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-container img {
+  max-width: 100%;
+  height: auto;
+  max-height: 150px;
+}
+
+#team-average {
+  margin-top: 20px;
+  padding-top: 20px; /* Add space above the team average */
+  border-top: 2px solid #555; /* Add a top border to separate from the table */
+}
+
+/* CSS for vertical headers with horizontal text */
+.vertical-header {
+  writing-mode: vertical-lr; /* Set vertical text orientation */
+  text-orientation:inherit; /* Keep text upright */
+  white-space: nowrap; /* Prevent wrapping of text */
+}
+
+/* Adjust the table header cells to better fit vertical headers */
+th {
+  height: 140px; /* Set a fixed height to accommodate the vertical text */
+  line-height: 1; /* Adjust line height to match the header cell height */
+  padding: 5px; /* Adjust padding to center the text */
+  vertical-align: middle; /* Center the text vertically */
+}
