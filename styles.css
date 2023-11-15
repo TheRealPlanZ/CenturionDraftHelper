@@ -105,3 +105,31 @@ th {
   display: block;
   margin: 5px 0;
 }
+
+/* Add to styles.css */
+.tier {
+  border: 1px solid #000;
+  margin-bottom: 10px; /* Space between tiers */
+}
+
+.tier-header {
+  padding: 5px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.tier-S { background-color: #ff6347; } /* Adjust colors as needed */
+.tier-A { background-color: #ffda47; }
+.tier-B { background-color: #fffd47; }
+.tier-C { background-color: #d2ff47; }
+.tier-D { background-color: #87ff47; }
+
+
+.tier-member {
+  padding: 5px;
+  border-top: 1px solid #000; /* Separates members within the same tier */
+}
+
+.member-name, .member-increase, .member-sales {
+  display: block; /* Ensure each spans a full line */
+}

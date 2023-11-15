@@ -28,17 +28,28 @@ function displayTierList() {
     const tierListContainer = document.getElementById('tier-list-container');
     tierListContainer.innerHTML = ''; // Clear the container before adding new elements
 
-    allMembers.forEach((member, index) => {
-        const memberElement = document.createElement('div');
-        memberElement.className = 'tier-list-member';
-        memberElement.innerHTML = `
-            <span class="member-name">${member.name}</span>
-            <span class="member-tier">Tier: ${member.tier}</span>
-            <span class="member-increase">Avg Increase: ${member.averageIncrease.toFixed(2)}%</span>
-            <span class="member-sales">Avg Sales: $${member.averageSales.toLocaleString()}</span>
-            <button onclick="addMemberToTeam('${member.name}')">Add to Team</button>
-        `;
-        tierListContainer.appendChild(memberElement);
+    // Create tier sections
+    const tiers = { 'S': [], 'A': [], 'B': [], 'C': [], 'D': [] }; // Add 'E' tier if needed
+
+    allMembers.forEach(member => {
+        tiers[member.tier].push(member);
+    });
+
+    // Create HTML for each tier
+    Object.keys(tiers).forEach(tier => {
+        const tierDiv = document.createElement('div');
+        tierDiv.className = `tier tier-${tier}`;
+        tierDiv.innerHTML = `<div class="tier-header">Tier ${tier}</div>`;
+        tiers[tier].forEach(member => {
+            tierDiv.innerHTML += `
+                <div class="tier-member">
+                    <span class="member-name">${member.name}</span>
+                    <span class="member-increase">Avg Increase: ${member.averageIncrease.toFixed(2)}%</span>
+                    <span class="member-sales">Avg Sales: $${member.averageSales.toLocaleString()}</span>
+                </div>
+            `;
+        });
+        tierListContainer.appendChild(tierDiv);
     });
 }
 
