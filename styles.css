@@ -118,11 +118,12 @@ th {
   color: #fff;
 }
 
-.tier-S { background-color: #ff6347; } /* Adjust colors as needed */
-.tier-A { background-color: #ffda47; }
-.tier-B { background-color: #fffd47; }
-.tier-C { background-color: #d2ff47; }
-.tier-D { background-color: #87ff47; }
+.tier-S { background-color: #e57373; } /* Lighter red */
+.tier-A { background-color: #ffb74d; } /* Lighter orange */
+.tier-B { background-color: #fff176; } /* Lighter yellow */
+.tier-C { background-color: #dce775; } /* Lighter lime */
+.tier-D { background-color: #aed581; } /* Lighter green */
+.tier-E { background-color: #81c784; } /* Add 'E' tier color if needed, lighter teal */
 
 
 .tier-member {
@@ -132,4 +133,29 @@ th {
 
 .member-name, .member-increase, .member-sales {
   display: block; /* Ensure each spans a full line */
+}
+
+/* Add to styles.css */
+.member-details {
+  display: block; /* Initially show details */
+}
+
+/* Style the hide button */
+.hide-button {
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-shadow: none; /* Buttons may not need text shadow */
+}
+
+.hide-button:hover {
+  background-color: #666;
+}
+
+.tier-header, .member-name, .member-increase, .member-sales {
+  color: #fff; /* Change text color to white for better contrast */
+  text-shadow: 1px 1px 2px #000; /* Add text shadow for readability */
 }

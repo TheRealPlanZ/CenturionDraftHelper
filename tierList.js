@@ -24,12 +24,26 @@ function assignTiersToMembers() {
     });
 }
 
+function toggleVisibility(memberName) {
+    const memberDetails = document.getElementById(`details-${memberName}`);
+    const toggleButton = document.getElementById(`toggle-${memberName}`);
+
+    if (memberDetails.style.display === 'none') {
+        memberDetails.style.display = 'block';
+        toggleButton.textContent = 'Hide Details'; // Change button text to 'Hide Details'
+    } else {
+        memberDetails.style.display = 'none';
+        toggleButton.textContent = 'Show Details'; // Change button text to 'Show Details'
+    }
+}
+
+
 function displayTierList() {
     const tierListContainer = document.getElementById('tier-list-container');
     tierListContainer.innerHTML = ''; // Clear the container before adding new elements
 
     // Create tier sections
-    const tiers = { 'S': [], 'A': [], 'B': [], 'C': [], 'D': [] }; // Add 'E' tier if needed
+    const tiers = { 'S': [], 'A': [], 'B': [], 'C': [], 'D': [], 'E': [] }; // Add 'E' tier if needed
 
     allMembers.forEach(member => {
         tiers[member.tier].push(member);
@@ -40,18 +54,25 @@ function displayTierList() {
         const tierDiv = document.createElement('div');
         tierDiv.className = `tier tier-${tier}`;
         tierDiv.innerHTML = `<div class="tier-header">Tier ${tier}</div>`;
+        
         tiers[tier].forEach(member => {
             tierDiv.innerHTML += `
-                <div class="tier-member">
+                <div class="tier-member" id="member-${member.name.replace(/\s+/g, '-')}" >
                     <span class="member-name">${member.name}</span>
-                    <span class="member-increase">Avg Increase: ${member.averageIncrease.toFixed(2)}%</span>
-                    <span class="member-sales">Avg Sales: $${member.averageSales.toLocaleString()}</span>
+                    <div id="details-${member.name.replace(/\s+/g, '-')}" class="member-details">
+                        <span class="member-increase">Avg Increase: ${member.averageIncrease.toFixed(2)}%</span>
+                        <span class="member-sales">Avg Sales: $${member.averageSales.toLocaleString()}</span>
+                    </div>
+                    <button id="toggle-${member.name.replace(/\s+/g, '-')}" onclick="toggleVisibility('${member.name.replace(/\s+/g, '-')}')"
+                        class="hide-button">Hide Details</button>
                 </div>
             `;
         });
+
         tierListContainer.appendChild(tierDiv);
     });
 }
+
 
 
 // Add member to team function (you might need to modify this for your needs)
