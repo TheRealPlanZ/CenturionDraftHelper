@@ -77,3 +77,31 @@ th {
   padding: 5px; /* Adjust padding to center the text */
   vertical-align: middle; /* Center the text vertically */
 }
+
+/* Add styles for the tier list container and its children */
+#tier-list-container {
+  margin-top: 20px;
+}
+
+.tier-list-member {
+  background-color: #222;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.member-name {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.member-tier {
+  display: block;
+  font-weight: bold;
+}
+
+.member-increase, .member-sales {
+  display: block;
+  margin: 5px 0;
+}
